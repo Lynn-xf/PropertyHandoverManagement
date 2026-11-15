@@ -35,5 +35,5 @@ export const up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm) => {
-    pgm.sql(`DROP TABLE assignees;`);
+    pgm.sql(`DROP TABLE IF EXISTS assignees;`);
 };
