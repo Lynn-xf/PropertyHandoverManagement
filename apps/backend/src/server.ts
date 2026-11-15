@@ -1,11 +1,15 @@
 import express from 'express';
 import { pool } from './db';
+import projectsRouter from './routes/projects';
 
 const app = express();
 const PORT = process.env.PORT;
 
 // Middleware:parse incoming JSON requests
 app.use(express.json());
+
+// Register the projects router
+app.use('/api/projects', projectsRouter);
 
 // Health check endpoint
 app.get('/api/health', async (req, res) => {
